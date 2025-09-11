@@ -1,5 +1,44 @@
-<html>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+        .flex-container {
+
+            display: flex;
+            justify-content: space-around; 
+            align-items: stretch; 
+            /* flex-flow: column wrap; */ 
+            flex-direction: column; 
+            flex-wrap: wrap; 
+            align-content: stretch;
+            background-color: #bbdefb;
+            height: 100%;
+            padding: 15px;
+            gap: 5px;
+
+        }
+
+        .flex-container > div{
+            background: #ffecb3;
+            border: 3px solid #ffcc80;
+            border-radius: 5px;
+            padding: 8px;
+        }
+
+</style>
+
+</head>
+
+<body>
     <h1>Hello Pravesh</h1>
-  </body>
+    <div class="flex-container">
+        <div class="item1">item 1</div>
+        <div class="item2">item 2</div>
+        <div class="item3">item 3</div>
+    </div>
+    <script src="popup.js"></script>
+</body>
 </html>
