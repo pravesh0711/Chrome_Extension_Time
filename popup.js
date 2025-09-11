@@ -16,8 +16,14 @@ function startTimer() {
 function updateTimer() {
     // const currentTime = Date.now();
     const currentTime = new Date()
-    const milliseconds = currentTime
-    document.getElementById("item1").textContent = milliseconds; // Display milliseconds in the div
+    const milliseconds = {
+        ISTtime: currentTime.toLocaleString(),
+        ESTtime: currentTime.toLocaleString("en-US", {timeZone: "America/New_York"}),
+       
+    }
+    
+    document.getElementById("ISTtime").textContent = "IST Time: " +  milliseconds.ISTtime; 
+    document.getElementById("ESTtime").textContent = "EST Time: " +  milliseconds.ESTtime;  // Display milliseconds in the div
 }
 
 startTimer();

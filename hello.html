@@ -23,9 +23,11 @@
 
         .flex-container > div{
             background: #ffecb3;
-            border: 3px solid #ffcc80;
-            border-radius: 5px;
-            padding: 8px;
+            border: 7px solid #ffcc80;
+            border-radius: 9px;
+            padding: 14px;
+            height: 48px;
+            width: 319px;
         }
 
 </style>
@@ -33,14 +35,18 @@
 </head>
 
 <body>
-    <h1>Hello Pravesh</h1>
+    <h1>Time Zone</h1>
     <div class="flex-container">
-        <div id="item1">item 1</div>
-        <div class="item2">item 2</div>
+        <div class="item1">
+            <div id = "ISTtime"></div>
+        </div>
+        <div class="item2">
+            <div id="ESTtime"></div>
+        </div>
         <div class="item3">item 3</div>
         
     </div>
-     <div id="milliseconds"></div>
+    
     <script src="popup.js"></script>
 </body>
 </html>
