@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IST to EST Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .converter {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    input, button {
+      font-size: 1rem;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>IST to EST Converter</h1>
+
+  <div class="converter">
+    <label for="istTime">Enter IST Time:</label><br>
+    <input type="time" id="istTime" required />
+    <button onclick="convertTime()">Convert</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function convertTime() {
+      const timeInput = document.getElementById('istTime').value;
+      if (!timeInput) {
+        document.getElementById('result').textContent = "Please enter a valid time.";
+        return;
+      }
+
+      // Parse IST time from input (HH:MM)
+      const [hours, minutes] = timeInput.split(':').map(Number);
+      
+      // Create a date object with IST time
+      const now = new Date();
+      const istDate = new Date(Date.UTC(
+        now.getUTCFullYear(),
+        now.getUTCMonth(),
+        now.getUTCDate(),
+        hours - 5,
+        minutes - 30
+      ));
+
+      // Convert to EST using America/New_York timezone
+      const estString = istDate.toLocaleTimeString('en-US', {
+        timeZone: 'America/New_York',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      });
+
+      document.getElementById('result').textContent = `EST Time: ${estString}`;
+    }
+  </script>
+
+</body>
+</html>
