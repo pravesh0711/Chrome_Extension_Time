@@ -1,3 +1,4 @@
+
 let startTime;
 
 let time = new Date();
@@ -41,16 +42,16 @@ function convertTime() {
         minute: '2-digit',
         hour12: true
       });
-      document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById("convertBtn").addEventListener("click", convertTime);
-      });
-      document.getElementById('result').textContent = `EST Date & Time: ${estString}`;
+      // document.getElementById('result').textContent = `EST Date & Time: ${estString}`;
+        document.getElementById("result").textContent =`EST Date & Time: ${estString}`;
+      console.log(estString)
     }
 
-
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("convertBtn");
+      if (btn) {
+        btn.addEventListener("click", convertTime);
+      }
+    });
 
 startTimer();
-
-
-
-

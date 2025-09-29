@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,23 +52,91 @@
 </head>
 
 <body>
-    <h1 class="heading">Time Zone</h1>
-    <div class="flex-container">
-        <div class="item1">
-            <div id = "ISTtime"></div>
-        </div>
-        <div class="item2">
-            <div id="ESTtime"></div>
-        </div>
-        <div class="item3" style="height: 135px;">
-            <label for="istDateTime">IST to EST converter </label><br>
-            <label>Enter IST time and Date</label><br>
-            <input type="datetime-local" id="istDateTime" required />
-            <button onclick="convertTime()">Convert</button>
-            <div id="result"></div> 
-        </div>
+  <h1 class="heading">Time Zone</h1>
+  <div class="flex-container">
+    <div class="item1"><div id="ISTtime"></div></div>
+    <div class="item2"><div id="ESTtime"></div></div>
+    <div class="item3" style="height: 200px;">
+      <label for="istDateTime">IST to EST converter</label><br>
+      <input type="datetime-local" id="istDateTime" required />
+      <br><br>
+      <!-- ✅ No inline onclick -->
+      <button id="convertBtn">Convert</button>
+      <div id="result"></div>
     </div>
-    
-    <script src="popup.js"></script>
+  </div>
+
+  <!-- ✅ Load script last -->
+  <script src="popup.js"></script>
 </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Converter</title>
+  <style>
+    .flex-container {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      border-radius: 9px;
+      background-color: #452c63;
+      height: 380px;
+      width: 424px;
+      padding: 24px;
+      gap: 9px;
+    }
+
+    .flex-container > div {
+      background: #7B68EE;
+      border: 7px solid #E6E6FA;
+      border-radius: 9px;
+      padding: 14px;
+      height: 48px;
+      width: 350px;
+      color: white;
+      font: italic small-caps bold 16px/2 cursive;
+    }
+
+    .heading {
+      text-align: center;
+      color: #333;
+    }
+
+    button {
+      background-color: #ce1919;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 6px 12px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="heading">Time Zone</h1>
+  <div class="flex-container">
+    <div class="item1"><div id="ISTtime"></div></div>
+    <div class="item2"><div id="ESTtime"></div></div>
+    <div class="item3" style="height: 135px;">
+      <label for="istDateTime">IST to EST converter</label><br>
+      <input type="datetime-local" id="istDateTime" required />
+      <br><br>
+      <!-- ✅ No inline onclick -->
+      <!-- <button id="convertBtn">Convert</button>
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <!-- ✅ Load script last -->
+  <!-- <script src="popup.js"></script> -->
+<!-- </body> -->
+<!-- </html> --> --> -->
