@@ -41,6 +41,9 @@ function convertTime() {
         minute: '2-digit',
         hour12: true
       });
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("convertBtn").addEventListener("click", convertTime);
+      });
       document.getElementById('result').textContent = `EST Date & Time: ${estString}`;
     }
 
