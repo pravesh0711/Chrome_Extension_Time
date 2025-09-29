@@ -18,6 +18,32 @@ function updateTimer() {
     document.getElementById("ESTtime").textContent = "EST Time: " +  milliseconds.ESTtime;  // Display milliseconds in the div
 }
 
+function convertTime() {
+      const input = document.getElementById('istDateTime').value;
+      if (!input) {
+        document.getElementById('result').textContent = "Please enter a valid date and time.";
+        return;
+      }
+
+      // Parse datetime input (yyyy-MM-ddTHH:mm)
+      const istDate = new Date(input);
+
+      // Adjust IST to EST (subtract 5h30m)
+      const utcDate = new Date(istDate.getTime())
+
+      // Convert to EST (New York time)
+      const estString = utcDate.toLocaleString('en-US', {
+        timeZone: 'America/New_York',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      });
+      document.getElementById('result').textContent = `EST Date & Time: ${estString}`;
+    }
+
 
 
 startTimer();

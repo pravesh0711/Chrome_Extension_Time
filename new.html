@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -98,4 +98,104 @@
   </script>
 
 </body>
+</html> -->
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IST to EST Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .converter {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    input, button {
+      font-size: 1rem;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>IST to EST Converter</h1>
+
+  <div class="converter">
+    <label for="istDateTime">Enter IST Date & Time:</label><br>
+    <input type="datetime-local" id="istDateTime" required />
+    <button onclick="convertTime()">Convert</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function convertTime() {
+      const input = document.getElementById('istDateTime').value;
+      if (!input) {
+        document.getElementById('result').textContent = "Please enter a valid date and time.";
+        return;
+      }
+
+      // Parse datetime input (yyyy-MM-ddTHH:mm)
+      const istDate = new Date(input);
+
+      // Adjust IST to UTC (subtract 5h30m)
+      const utcDate = new Date(istDate.getTime() - (5.5 * 60 * 60 * 1000));
+
+      // Convert to EST (New York time)
+      const estString = utcDate.toLocaleString('en-US', {
+        timeZone: 'America/New_York',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      });
+
+      document.getElementById('result').textContent = `EST Date & Time: ${estString}`;
+    }
+  </script>
+
+</body>
 </html>
+```

@@ -9,7 +9,6 @@
             display: flex;
             justify-content: space-around;
             align-items: stretch;
-            /* flex-flow: column wrap; */
             flex-direction: column;
             flex-wrap: wrap;
             align-content: stretch;
@@ -18,12 +17,11 @@
             height: 100%;
             padding: 24px;
             gap: 9px;
-            height: 200px;
+            height: 370px;
             width: 424px;
         }
 
         .flex-container > div{
-            /* background: #; */
             background: #7B68EE;
             border: 7px solid #E6E6FA;
             border-radius: 9px;
@@ -32,10 +30,20 @@
             width: 350px;
             color: white;
            font: italic small-caps bold 16px/2 cursive;   
-
         }
         .heading{
             align-items: center;
+        }
+        button {
+        background-color: #ce1919;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+
+        button:hover {
+        background-color: #0056b3;
         }
 
 </style>
@@ -50,6 +58,13 @@
         </div>
         <div class="item2">
             <div id="ESTtime"></div>
+        </div>
+        <div class="item3" style="height: 128px;">
+            <label for="istDateTime">IST to EST converter </label><br>
+            <label>Enter IST time and Date</label><br>
+            <input type="datetime-local" id="istDateTime" required />
+            <button onclick="convertTime()">Convert</button>
+            <div id="result"></div> 
         </div>
     </div>
     
