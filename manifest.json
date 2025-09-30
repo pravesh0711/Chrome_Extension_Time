@@ -1,7 +1,7 @@
 {
   "name": "TimeZone",
   "description": "Base Level Extension",
-  "version": "1.2",
+  "version": "1.2.1",
   "manifest_version": 3,
   "action": {
     "default_popup": "hello.html",
